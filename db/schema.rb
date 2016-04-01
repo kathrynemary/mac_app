@@ -37,14 +37,6 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "position"
-    t.boolean  "board_member"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "business_hours", force: :cascade do |t|
     t.time     "open_time"
     t.time     "close_time"
@@ -52,16 +44,6 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.integer  "clinic_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "cars", force: :cascade do |t|
-    t.string   "make"
-    t.string   "model"
-    t.string   "color"
-    t.string   "license_plate_number"
-    t.integer  "volunteer_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
   end
 
   create_table "clinics", force: :cascade do |t|
@@ -76,6 +58,14 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "organizers", force: :cascade do |t|
+    t.string   "position"
+    t.boolean  "board_member"
+    t.integer  "user_id",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -87,11 +77,21 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "make"
+    t.string   "model"
+    t.string   "color"
+    t.string   "license_plate_number"
+    t.integer  "volunteer_id",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "volunteers", force: :cascade do |t|
     t.string   "gender"
     t.string   "type"
     t.boolean  "on_call"
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

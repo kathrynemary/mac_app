@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Admin do
+describe Organizer do
 
   it { should belong_to(:user) }
 

@@ -4,7 +4,7 @@ class CreateVolunteers < ActiveRecord::Migration
       t.string :gender
       t.string :type
       t.boolean :on_call
-      t.integer :user_id
+      t.integer :user_id, null: false
 
       t.timestamps null: false
     end

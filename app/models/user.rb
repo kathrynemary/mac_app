@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
   has_one :volunteer
-  has_one :admin
+  has_one :organizer
   belongs_to :address
 end

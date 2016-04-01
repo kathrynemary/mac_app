@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Car do
+describe Vehicle do
 
   it { should belong_to(:volunteer) }
 
