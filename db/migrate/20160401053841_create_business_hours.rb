@@ -4,7 +4,7 @@ class CreateBusinessHours < ActiveRecord::Migration
       t.time :open_time
       t.time :close_time
       t.integer :day_of_week
-      t.integer :business_id
+      t.integer :clinic_id
 
       t.timestamps null: false
     end

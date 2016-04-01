@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.time     "open_time"
     t.time     "close_time"
     t.integer  "day_of_week"
-    t.integer  "business_id"
+    t.integer  "clinic_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
