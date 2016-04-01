@@ -6,6 +6,7 @@ class CreateAccommodations < ActiveRecord::Migration
       t.integer :guest_capacity
       t.string :pet
       t.integer :num_roommates
+      t.integer :volunteer_id
 
       t.timestamps null: false
     end

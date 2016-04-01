@@ -1,4 +1,4 @@
 class Clinic < ActiveRecord::Base
-  has_one :address
+  belongs_to :address
   has_many :business_hours
 end

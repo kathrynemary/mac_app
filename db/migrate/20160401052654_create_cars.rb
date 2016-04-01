@@ -5,6 +5,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :model
       t.string :color
       t.string :license_plate_number
+      t.integer :volunteer_id
 
       t.timestamps null: false
     end

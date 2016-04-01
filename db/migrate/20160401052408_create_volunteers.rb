@@ -5,8 +5,6 @@ class CreateVolunteers < ActiveRecord::Migration
       t.string :type
       t.boolean :on_call
       t.integer :user_id
-      t.integer :accommodation_id
-      t.integer :car_id
 
       t.timestamps null: false
     end

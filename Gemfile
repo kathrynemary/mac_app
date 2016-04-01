@@ -37,14 +37,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Debugging
   gem 'byebug'
   gem 'pry'
 
   # Rspec
   gem 'rspec-core',  '~> 3.4.3'
   gem 'rspec-rails', '~> 3.4'
-  gem 'shoulda-matchers',           require: false
+  gem 'shoulda-matchers', '~> 3.1'
+
+  # Factories
+  # gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do

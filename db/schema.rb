@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.integer  "guest_capacity"
     t.string   "pet"
     t.integer  "num_roommates"
+    t.integer  "volunteer_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.string   "model"
     t.string   "color"
     t.string   "license_plate_number"
+    t.integer  "volunteer_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "role"
+    t.integer  "address_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -89,10 +92,8 @@ ActiveRecord::Schema.define(version: 20160401054138) do
     t.string   "type"
     t.boolean  "on_call"
     t.integer  "user_id"
-    t.integer  "accommodation_id"
-    t.integer  "car_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
