@@ -1,7 +1,5 @@
-require 'test_helper'
+require 'rails_helper'
 
-class AddressTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Address do
+
 end

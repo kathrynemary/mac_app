@@ -1,7 +1,5 @@
-require 'test_helper'
+require 'rails_helper'
 
-class VolunteerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Volunteer do
+
 end

@@ -1,7 +1,5 @@
-require 'test_helper'
+require 'rails_helper'
 
-class BusinessHourTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe BusinessHour do
+
 end
