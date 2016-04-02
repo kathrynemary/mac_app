@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+
+  get 'volunteers' => redirect('volunteers/index')
   get 'volunteers/index'
 
   get 'home/index'
