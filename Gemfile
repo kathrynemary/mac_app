@@ -6,6 +6,9 @@ gem 'rails', '4.2.6'
 gem 'activeadmin', github: 'activeadmin'
 gem 'rails_admin'
 gem 'devise'
+gem 'cancan'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # Use postgres as the database for Active Record
 gem 'pg'
@@ -37,7 +40,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'rails_12factor', group: :production
-
 
 group :development, :test do
   # Debugging

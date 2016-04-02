@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'volunteers/index'
+
   get 'home/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  resources :volunteers
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
