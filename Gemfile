@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 gem 'activeadmin', github: 'activeadmin'
 gem 'rails_admin'
 gem 'devise'
+gem 'cancan'
 
 # Use postgres as the database for Active Record
 gem 'pg'
