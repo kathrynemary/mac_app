@@ -2,7 +2,11 @@ class VolunteersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-  	@volunteers = Volunteer.all
+    if current_user && current_user.organizer
+  	 @volunteers = Volunteer.all
+    else
+      redirect_to main_app.root_path
+    end
   end
 
   def new
