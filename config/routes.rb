@@ -62,4 +62,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+#for use with google calendar api.
+  devise_for :users,
+	:controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
 end

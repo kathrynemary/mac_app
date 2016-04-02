@@ -6,6 +6,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone_number
       t.string :role
       t.integer :address_id
+      t.string :token
+      t.string :uid
+      t.string :provider
 
       t.timestamps null: false
     end
