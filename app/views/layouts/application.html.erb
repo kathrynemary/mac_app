@@ -12,11 +12,16 @@
 <p class="alert"><%= alert %></p>
 
 <div id = "login-logout-top">
+  <div id="title" class="col-md-8">
+  Midwest Access Coalition Volunteer Management Portal
+  </div>
+  <div class="col-md-4">
   <% if current_user %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
   <% else %>
     <%= link_to "Login", new_user_session_path %>
   <% end %>
+  </div>
 </div>
 
 <%= yield %>

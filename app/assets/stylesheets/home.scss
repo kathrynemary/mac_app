@@ -9,5 +9,21 @@ div#log-in {
 }
 
 div#login-logout-top {
-  text-align: center;
+  text-align: right;
+  top: 0px;
+  position: absolute;
+  height: 50px;
+  background-color: lightgrey;
+  width: 100%;
+  padding: 5px;
+
+  #title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+div.page {
+	margin: 20px;
 }
