@@ -11,5 +11,21 @@ class User < ActiveRecord::Base
   has_one :organizer
   belongs_to :address
 
+  after_create :create_volunteer_model, :create_address_model
+
   accepts_nested_attributes_for :address
+
+  def create_volunteer_model
+    if volunteer.nil?
+      self.volunteer = Volunteer.new(user: self)
+      save!
+    end
+  end
+
+  def create_address_model
+    if address.nil?
+      self.address = Address.new(user: self)
+      save!
+    end
+  end
 end
