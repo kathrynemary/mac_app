@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'volunteers' => redirect('volunteers/index')
   get 'volunteers/index'
 
   get 'home/index'
