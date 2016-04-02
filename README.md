@@ -11,9 +11,10 @@ Read about the details and goals for the app [here](https://docs.google.com/docu
 * Postgresql
 
 ## Local Development
-Clone this repo.
-Bundle with `bundle install`
-Run migrations with `rake db:migrate`
+Clone this repo.  
+Bundle with `bundle install`  
+Create DB `createdb db/development`  
+Run migrations with `rake db:migrate`  
 Start the server with `bin/rails s`
 
 ## How to run the test suite
