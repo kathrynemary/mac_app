@@ -1,0 +1,11 @@
+<h1>Midwest Access Coalition Volunteer Management Portal</h1>
+<div id="container">
+  <div class="row" style="margin:auto;width:50%">
+    <%= link_to(volunteer_path(current_user.volunteer), class: "btn btn-info") do %>
+      View Account
+    <% end %>
+    <%= link_to edit_volunteer_path(current_user.volunteer), class: "btn btn-primary" do %>
+      Edit Account
+    <% end %>
+  </div>
+</div>

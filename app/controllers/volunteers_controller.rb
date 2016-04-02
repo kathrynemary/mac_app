@@ -44,7 +44,27 @@ class VolunteersController < ApplicationController
   	@volunteer = Volunteer.find(params[:id])
   end
 
-  def patch
+  def update
+    @volunteer = Volunteer.find(params[:id])
+    @volunteer.update_attributes(params.require(:volunteer).permit(:on_call,
+                                                                  :gender))
+    @user = @volunteer.user
+    @user.update_attributes(params.require(:volunteer)
+                                  .require(:user_attributes)
+                                  .permit(:first_name,
+                                          :last_name,
+                                          :email,
+                                          :phone_number))
+    @address = @user.address
+    @address.update_attributes(params.require(:volunteer)
+                                     .require(:user_attributes)
+                                     .require(:address_attributes)
+                                     .permit(:street_address_1,
+                                             :street_address_2,
+                                             :city,
+                                             :state,
+                                             :zip_code))
+    redirect_to @volunteer
   end
 
   def show
