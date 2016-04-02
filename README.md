@@ -35,3 +35,21 @@ bundle exec rake db:schema:load RAILS_ENV=test
 
 ## Deploy to Heroku
 [http://midwestaccesscoalition.herokuapp.com/](http://midwestaccesscoalition.herokuapp.com/)
+
+##Register the Google Calendar API
+Set up a project for the app here:
+https://console.developers.google.com/apis/library 
+Make sure that google calendar and google+ are enabled.
+Google's documentation can be found here:
+https://developers.google.com/google-apps/calendar/auth
+
+Create credentials for your project with the type Other (Not Web Application)
+Once they generate, click the download link to the right.
+Save that file as client_secret.json in the main project directory. It's referenced as CLIENT_SECRETS_PATH in quickstart.rb
+
+Run ruby quickstart.rb, open the url it generates in your browser. Select the email account to use, then paste the resulting code in your terminal and hit enter.
+
+Very helpful:
+https://developers.google.com/google-apps/calendar/quickstart/ruby#step_3_set_up_the_sample
+http://landonmarder.com/posts/2014/06/04/google-cal-rails/
+

@@ -8,6 +8,7 @@ OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Calendar API Ruby Quickstart'
 CLIENT_SECRETS_PATH = 'client_secret.json'
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials', "calendar-ruby-quickstart.yaml")
+#make sure SCOPE is not set to AUTH_CALENDAR_READONLY
 SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
 
 # Ensure valid credentials, either by restoring from the saved credentials
@@ -57,7 +58,7 @@ response.items.each do |event|
   puts "- #{event.summary} (#{start})"
 end
 
-#This sets up a new event and writes to the user's calendar.
+#This sets up a new event and writes it to the user's calendar.
 #Currentlyreminder notifications are set to true.
 #Can change remove the reminders, will default to false unless otherwise specified.
 #Can also edit length of time before an event at which to notify the user. For full source info, see:
