@@ -21,7 +21,8 @@ class VolunteersController < ApplicationController
     @user = User.new(params.require(:volunteer).permit(:first_name,
     																							     :last_name,
                                                        :email,
-                                                       :phone_number))
+                                                       :phone_number,
+                                                       :password))
     @user.role = 'volunteer'
     @user.address_id = @address.id
     @user.save!
@@ -44,7 +45,6 @@ class VolunteersController < ApplicationController
   end
 
   def patch
-  	binding.pry
   end
 
   def show
