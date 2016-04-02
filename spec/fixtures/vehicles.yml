@@ -5,9 +5,11 @@ one:
   model: MyString
   color: MyString
   license_plate_number: MyString
+  volunteer_id: 1
 
 two:
   make: MyString
   model: MyString
   color: MyString
   license_plate_number: MyString
+  volunteer_id: 2

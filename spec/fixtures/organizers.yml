@@ -3,7 +3,9 @@
 one:
   position: MyString
   board_member: false
+  user_id: 1
 
 two:
   position: MyString
   board_member: false
+  user_id: 2
