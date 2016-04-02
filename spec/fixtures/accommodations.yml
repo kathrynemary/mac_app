@@ -6,6 +6,7 @@ one:
   guest_capacity: 1
   pet: MyString
   num_roommates: 1
+  volunteer_id: 1
 
 two:
   bedding: MyString
@@ -13,3 +14,4 @@ two:
   guest_capacity: 1
   pet: MyString
   num_roommates: 1
+  volunteer_id: 2
