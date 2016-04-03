@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :volunteers
+  resources :on_call_times
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
