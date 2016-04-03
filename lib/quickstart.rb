@@ -67,9 +67,9 @@ end
 @event.summary = 'New Event Title'
 @event.description = 'The description'
 @event.location = 'Location'
-@event.start = { :date_time => "2016-04-02T17:00:00-05:00"}
-@event.end = { :date_time => "2016-04-02T17:00:00-05:00"}
-@event.attendees = [ { :email => 'bob@example.com' } ]
+@event.start = { :date_time => "2016-04-02T18:00:00-05:00"}
+@event.end = { :date_time => "2016-04-02T18:00:00-05:00"}
+@event.attendees = [ { :email => 'tcallich@gmail.com' } ]
 @event.reminders = true
 
 @set_event = service.insert_event(calendar_id, @event)
