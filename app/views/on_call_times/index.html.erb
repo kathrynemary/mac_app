@@ -18,7 +18,14 @@
       <% end %>
 
       <% if d.wday == 0 %> </tr><tr> <% end %>
-      <td> <%= d.day %> </td>
+      <td> 
+        <%=  link_to d.day, new_on_call_time_path %> 
+        <% @date = Date.parse(d.year.to_s+ "-" + d.month.to_s + "-" + d.day.to_s) %>
+        <% o = @call_times.find_all { |c| (c.start_time..c.end_time).cover? @date }  %>
+        <% o.each do |event| %>
+          <p><%= event.user_id %></p>
+          <%end %>
+      </td>
     <% end %>
     </tr>
   </table>

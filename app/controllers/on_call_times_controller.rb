@@ -1,10 +1,11 @@
 class OnCallTimesController < ApplicationController
 
   def index
-    @articles = OnCallTime.all
-    @date = params[:month] ? Date.parse(params[:month]) : Date.today
+    @call_times = OnCallTime.all
   end
 
+  def new
   
+  end  
 end
 
