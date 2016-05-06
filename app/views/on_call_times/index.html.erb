@@ -23,7 +23,7 @@
         <% @date = Date.parse(d.year.to_s+ "-" + d.month.to_s + "-" + d.day.to_s) %>
         <% o = @call_times.find_all { |c| (c.start_time..c.end_time).cover? @date }  %>
         <% o.each do |event| %>
-          <p><%= event.user_id %></p>
+          <p><%= event.user.first_name %>.<%= event.user.last_name[0] %></p>
           <%end %>
       </td>
     <% end %>
