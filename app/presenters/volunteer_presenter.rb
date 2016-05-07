@@ -15,7 +15,6 @@ class VolunteerPresenter
   }
 
   def initialize(volunteer)
-    # binding.pry
     @volunteer = volunteer
     @user = volunteer.try(:user)
     @address = user.try(:address)
@@ -31,7 +30,7 @@ class VolunteerPresenter
   def volunteer_data
     {
       gender: volunteer.gender,
-      role: volunteer.type,
+      role: volunteer.capacity,
       on_call: volunteer.on_call,
     }
   end

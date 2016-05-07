@@ -33,7 +33,8 @@ class VolunteersController < ApplicationController
 
     # Create new volunteer object
     @volunteer = Volunteer.new(params.require(:volunteer).permit(:gender,
-                                                                 :on_call))
+                                                                 :on_call,
+                                                                 :capacity))
     # Column can't be named type unless following inheritance pattern, must be renamed.
     # @volunteer.type = params[:volunteer][:role]
 
@@ -49,7 +50,8 @@ class VolunteersController < ApplicationController
 
   def update
     @volunteer.update_attributes(params.require(:volunteer).permit(:on_call,
-                                                                  :gender))
+                                                                  :gender,
+                                                                  :capacity))
     @user = @volunteer.user
     @user.update_attributes(params.require(:volunteer)
                                   .require(:user_attributes)
