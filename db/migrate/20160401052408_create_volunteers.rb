@@ -2,7 +2,7 @@ class CreateVolunteers < ActiveRecord::Migration
   def change
     create_table :volunteers do |t|
       t.string :gender
-      t.string :type
+      t.string :capacity
       t.boolean :on_call
       t.integer :user_id, null: false
 

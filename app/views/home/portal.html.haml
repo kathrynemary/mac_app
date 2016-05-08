@@ -1,0 +1,9 @@
+.container
+  .row{:style=>"text-align:center"}
+    - if current_user.volunteer
+      = render "volunteer"
+    - elsif current_user.organizer
+      = render "organizer"
+    - else
+      .btn.btn-info
+        = link_to "View Profile", user_path(current_user)
