@@ -1,0 +1,25 @@
+.container
+  .row
+    - if current_user.full_name
+      %h1= current_user.full_name.titleize
+    - else
+      %h1
+        Your Profile
+    %br
+    %table.table.table-striped.table-bordered.table-condensed
+      %tr
+        %td
+          First Name
+        %td= current_user.first_name.try(:titleize)
+      %tr
+        %td
+          Last Name
+        %td= current_user.last_name.try(:titleize)
+      %tr
+        %td
+          Email
+        %td= current_user.email
+  .btn
+    = link_to "Update Profile", edit_user_path(current_user)
+  .btn
+    = link_to "Back", home_portal_path

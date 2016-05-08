@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :volunteers
-  resources :users, only: [:edit, :show]
+  resources :users, only: [:edit, :show, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

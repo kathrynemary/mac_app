@@ -14,11 +14,17 @@ class VolunteersController < ApplicationController
 
   def create
     # Create new address object
-    @address = Address.new(params.require(:volunteer).permit(:street_address_1,
-                                                             :street_address_2,
-                                                             :city,
-                                                             :state,
-                                                             :zip_code))
+    @address = Address.new(
+      params.require(
+        :volunteer
+        ).permit(
+          :street_address_1,
+          :street_address_2,
+          :city,
+          :state,
+          :zip_code
+        )
+      )
     @address.save!
 
     # Create new user object
