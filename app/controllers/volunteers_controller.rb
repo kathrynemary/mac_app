@@ -41,8 +41,6 @@ class VolunteersController < ApplicationController
     @volunteer = Volunteer.new(params.require(:volunteer).permit(:gender,
                                                                  :on_call,
                                                                  :capacity))
-    # Column can't be named type unless following inheritance pattern, must be renamed.
-    # @volunteer.type = params[:volunteer][:role]
 
     @volunteer.user_id = @user.id
     @volunteer.save!
