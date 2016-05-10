@@ -13,13 +13,14 @@
 
 <div id = "login-logout-top">
   <div id="title" class="col-md-8">
-  Midwest Access Coalition Volunteer Management Portal
+    <%=  image_tag("mac-logo-bw.png", size: "100") %>
+    <h1>Portal</h1>
   </div>
   <div class="col-md-4">
   <% if current_user %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-inverted' %>
   <% else %>
-    <%= link_to "Login", new_user_session_path %>
+    <%= link_to "Login", new_user_session_path, class: 'btn btn-primary btn-inverted' %>
   <% end %>
   </div>
 </div>

@@ -11,8 +11,6 @@ class User < ActiveRecord::Base
   has_one :organizer
   belongs_to :address
 
-  after_create :create_volunteer_model, :create_address_model
-
   accepts_nested_attributes_for :address
 
   def create_volunteer_model
@@ -28,4 +26,9 @@ class User < ActiveRecord::Base
       save!
     end
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 end

@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20160402214052) do
 
   create_table "volunteers", force: :cascade do |t|
     t.string   "gender"
-    t.string   "type"
+    t.string   "capacity"
     t.boolean  "on_call"
     t.integer  "user_id",    null: false
     t.datetime "created_at", null: false

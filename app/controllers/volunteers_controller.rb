@@ -1,5 +1,5 @@
 class VolunteersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :load_volunteer, :load_volunteer_data
 
   def index
     if current_user && current_user.organizer
@@ -14,11 +14,17 @@ class VolunteersController < ApplicationController
 
   def create
     # Create new address object
-    @address = Address.new(params.require(:volunteer).permit(:street_address_1,
-                                                             :street_address_2,
-                                                             :city,
-                                                             :state,
-                                                             :zip_code))
+    @address = Address.new(
+      params.require(
+        :volunteer
+        ).permit(
+          :street_address_1,
+          :street_address_2,
+          :city,
+          :state,
+          :zip_code
+        )
+      )
     @address.save!
 
     # Create new user object
@@ -33,9 +39,8 @@ class VolunteersController < ApplicationController
 
     # Create new volunteer object
     @volunteer = Volunteer.new(params.require(:volunteer).permit(:gender,
-                                                                 :on_call))
-    # Column can't be named type unless following inheritance pattern, must be renamed.
-    # @volunteer.type = params[:volunteer][:role]
+                                                                 :on_call,
+                                                                 :capacity))
 
     @volunteer.user_id = @user.id
     @volunteer.save!
@@ -45,13 +50,12 @@ class VolunteersController < ApplicationController
 
 
   def edit
-  	@volunteer = Volunteer.find(params[:id])
   end
 
   def update
-    @volunteer = Volunteer.find(params[:id])
     @volunteer.update_attributes(params.require(:volunteer).permit(:on_call,
-                                                                  :gender))
+                                                                  :gender,
+                                                                  :capacity))
     @user = @volunteer.user
     @user.update_attributes(params.require(:volunteer)
                                   .require(:user_attributes)
@@ -60,7 +64,8 @@ class VolunteersController < ApplicationController
                                           :email,
                                           :phone_number))
     @address = @user.address
-    @address.update_attributes(params.require(:volunteer)
+    if @address
+      @address.update_attributes(params.require(:volunteer)
                                      .require(:user_attributes)
                                      .require(:address_attributes)
                                      .permit(:street_address_1,
@@ -68,17 +73,27 @@ class VolunteersController < ApplicationController
                                              :city,
                                              :state,
                                              :zip_code))
+    end
     redirect_to @volunteer
   end
 
   def show
-  	@volunteer = Volunteer.find(params[:id])
   end
 
   def destroy
-  	@volunteer = Volunteer.find(params[:id])
   	@volunteer.destroy!
 
   	redirect_to volunteers_path
+  end
+
+  private
+
+  def load_volunteer
+    @volunteer = current_user.volunteer
+    @volunteer = Volunteer.find(params[:id]) if params[:id] && current_user.organizer
+  end
+
+  def load_volunteer_data
+    @volunteer_data = VolunteerPresenter.new(@volunteer).present if @volunteer
   end
 end

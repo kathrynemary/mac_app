@@ -12,6 +12,7 @@
   <tr>
     <th colspan="1">First Name</th>
     <th colspan="1">Last Name</th>
+    <th colspan="1">Capacity</th>
     <th colspan="1">On Call</th>
     <th>Actions</th>
   </tr>
@@ -22,6 +23,7 @@
     	<tr>
       <td><%= volunteer.user.try(:first_name) %></td>
       <td><%= volunteer.user.try(:last_name) %></td>
+      <td><%= volunteer.capacity %></td>
       <td><%= volunteer.on_call ? 'Yes' : 'No' %></td>
       <td>
         <%= link_to(edit_volunteer_path(volunteer), class: "btn btn-small") do %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/data_admin', as: 'rails_admin'
   devise_for :users
 
   get 'volunteers' => redirect('volunteers/index')
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :volunteers
   resources :on_call_times
+  resources :users, only: [:edit, :show, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,18 @@
+.btn.btn-primary {
+	background: $purple;
+	color: $off-white;
+	border: $chartreuse;
+}
+
+.btn.btn-info {
+	background: $purple;
+	color: $off-white;
+	border: $chartreuse;
+	a {
+		color: $off-white;
+	}
+}
+
+a { 
+	color: $purple;
+}
