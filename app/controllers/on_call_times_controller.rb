@@ -2,6 +2,9 @@ class OnCallTimesController < ApplicationController
 
   def index
     @call_times = OnCallTime.all
+    today = Date.today
+    @beginning_of_month = Date.civil(today.year, today.month, 1)
+    @end_of_month = Date.civil(today.year, today.month, -1)
   end
 
   def new

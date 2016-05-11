@@ -9,12 +9,6 @@
      <th>Saturday</th>
     </tr>
     <tr>
-    <% @beginning_of_month = Date.civil(2016, 4, 1) %>
-    <% @end_of_month = Date.civil(2016, 4, -1) %>
-
-
-    <% @beginning_of_month1 = Date.today.at_beginning_of_month %>
-    <% @end_of_month1 = Date.today.at_end_of_month %>
     <% (@beginning_of_month..@end_of_month).each do |d| %>
       <% if d == @beginning_of_month %>
         <% d.wday.times do %> <td class='offset'></td> <% end %>
