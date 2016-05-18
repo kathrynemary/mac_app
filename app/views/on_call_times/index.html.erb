@@ -1,0 +1,33 @@
+<div>
+  <h2 class="col-md-8 col-md-offset-5"><%= Date.today.strftime("%B %Y") %></h2>
+
+  <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
+  <table id='calendar'class="col-md-8 col-md-offset-1">
+   <tr>
+     <th>Sunday</th><th>Monday</th>
+     <th>Tuesday</th><th>Wednesday</th>
+     <th>Thursday</th><th>Friday</th>
+     <th>Saturday</th>
+    </tr>
+    <tr>
+    <% (@beginning_of_month..@end_of_month).each do |d| %>
+      <% if d == @beginning_of_month %>
+        <% d.wday.times do %> <td class='offset'></td> <% end %>
+      <% end %>
+
+      <% if d.wday == 0 %> </tr><tr> <% end %>
+      <td> 
+          <%= render partial: 'modal', :locals => {d: d, call_times: @call_times, beginning_of_month: @beginning_of_month, end_of_month: @end_of_month } %>
+          <% @date = Date.parse(d.year.to_s+ "-" + d.month.to_s + "-" + d.day.to_s) %>
+          <% o = @call_times.find_all { |c| (c.start_time..c.end_time).cover? @date }  %>
+          <% o.each do |event| %>
+            <p><%= event.user.first_name %>.<%= event.user.last_name[0] %></p>
+          <% end %>
+      </td>
+    <% end %>
+    </tr>
+  </table>
+</div>
