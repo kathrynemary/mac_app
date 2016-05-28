@@ -1,10 +1,20 @@
 class OnCallTimesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @call_times = OnCallTime.all
-    today = Date.today
-    @beginning_of_month = Date.civil(today.year, today.month, 1)
-    @end_of_month = Date.civil(today.year, today.month, -1)
+    if current_user && current_user.organizer
+      @call_times = OnCallTime.all
+      today = Date.today
+      @beginning_of_month = Date.civil(today.year, today.month, 1)
+      @end_of_month = Date.civil(today.year, today.month, -1)
+    elsif current_user
+      @call_times = OnCallTime.where(user_id: current_user.id)
+      today = Date.today
+      @beginning_of_month = Date.civil(today.year, today.month, 1)
+      @end_of_month = Date.civil(today.year, today.month, -1)
+    else
+      redirect_to main_app.root_path
+    end
   end
 
   def new
