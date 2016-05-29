@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_one :volunteer
   has_one :organizer
   belongs_to :address
+  has_many :on_call_times
 
   accepts_nested_attributes_for :address
 

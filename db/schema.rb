@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20160508022731) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "on_call_times", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizers", force: :cascade do |t|
     t.string   "position"
     t.boolean  "board_member"

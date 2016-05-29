@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :volunteers
+  resources :on_call_times
   resources :users, only: [:edit, :show, :update]
 
   # Example of regular route:
