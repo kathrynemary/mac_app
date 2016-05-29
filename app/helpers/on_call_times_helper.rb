@@ -7,4 +7,5 @@ module OnCallTimesHelper
       [current_user]
     end
   end
+
 end
