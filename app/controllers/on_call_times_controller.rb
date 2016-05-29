@@ -15,7 +15,7 @@ class OnCallTimesController < ApplicationController
     @call_time = OnCallTime.new(
       start_time: convert_to_date(params, :start_time), 
       end_time: convert_to_date(params, :end_time), 
-      user_id: params[:on_call_time][:provider_id]
+      user_id: current_user.id
     )
     if @call_time.valid?
       @call_time.save!

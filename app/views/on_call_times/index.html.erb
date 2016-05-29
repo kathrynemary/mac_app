@@ -1,16 +1,21 @@
 <div>
-  <h2 class="col-md-8 col-md-offset-5"><%= Date.today.strftime("%B %Y") %></h2>
+  <!-- <h2 class="col-md-8 col-md-offset-5"><%= Date.today.strftime("%B %Y") %></h2> -->
 
   <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
 
   <table id='calendar'class="col-md-8 col-md-offset-1">
-   <tr>
-     <th>Sunday</th><th>Monday</th>
-     <th>Tuesday</th><th>Wednesday</th>
-     <th>Thursday</th><th>Friday</th>
-     <th>Saturday</th>
+    <caption>
+      <h2 class="col-md-8 col-md-offset-5">
+        <%= Date.today.strftime("%B %Y") %>
+      </h2>
+    </caption>
+    <tr>
+      <th>Sunday</th><th>Monday</th>
+      <th>Tuesday</th><th>Wednesday</th>
+      <th>Thursday</th><th>Friday</th>
+      <th>Saturday</th>
     </tr>
     <tr>
     <% (@beginning_of_month..@end_of_month).each do |d| %>

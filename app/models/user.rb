@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   end
 
+  attr_accessor :name
+
   has_one :volunteer
   has_one :organizer
   belongs_to :address
