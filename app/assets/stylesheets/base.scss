@@ -1,7 +1,18 @@
+body { 
+	padding-top: 7em; 
+}
+
+a { 
+	color: $purple;
+}
+
 .btn.btn-primary {
 	background: $purple;
 	color: $off-white;
 	border: $chartreuse;
+	&:hover {
+		background: $light-coral;
+	}
 }
 
 .btn.btn-info {
@@ -11,8 +22,11 @@
 	a {
 		color: $off-white;
 	}
+	&:hover {
+		background: $light-coral;
+	}
 }
 
-a { 
-	color: $purple;
+#logo-link {
+  margin-top: -50px;
 }

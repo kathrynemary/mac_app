@@ -1,0 +1,12 @@
+@import "colors";
+
+$navbar-default-bg: $chartreuse;
+// $light-orange: #ff8c00;
+// $navbar-default-color: $light-orange;
+$navbar-height: 150px;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "base";
+@import "on_call_times";
+@import "bootstrap/theme";
