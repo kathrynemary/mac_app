@@ -1,0 +1,65 @@
+.container
+	.row
+		%h1
+			Volunteer Details
+		%table.table.table-striped.table-bordered.table-condensed
+			%tr
+				%td
+					First Name
+				%td= @volunteer_data[:first_name]
+			%tr
+				%td
+					Last Name
+				%td= @volunteer_data[:last_name]
+			%tr
+				%td
+					Email
+				%td= @volunteer_data[:email]
+			%tr
+				%td
+					Address
+				%td= @volunteer_data[:address_line_1]
+			%tr
+				%td
+					Address 2
+				%td= @volunteer_data[:address_line_2]
+			%tr
+				%td
+					City
+				%td= @volunteer_data[:city] 
+			%tr
+				%td
+					State
+				%td= @volunteer_data[:state] 
+			%tr
+				%td
+					Zip Code
+				%td= @volunteer_data[:zip_code] 
+			%tr
+				%td
+					Gender
+				%td= @volunteer_data[:gender] 
+			%tr
+				%td
+					Role
+				%td= @volunteer_data[:role] 
+			%tr
+				%td
+					On-Call
+				%td= @volunteer_data[:on_call] 
+	.row
+		%h1
+			Schedule
+		%p
+			Schedule info here!
+	.row
+		%h1
+			Training Material
+		%p
+		Training material here!
+	.br
+	.row{:style=>"text-align:center"}
+		.btn.btn-info
+			= link_to "Edit", edit_volunteer_path(@volunteer)
+		.btn.btn-info
+			= link_to "Portal", home_portal_path
