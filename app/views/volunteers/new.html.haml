@@ -1,67 +1,67 @@
 %h1 Create a new volunteer
 = form_for :volunteer, url: volunteers_path do |f|
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
     = f.label :first_name, "first name", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
     = f.text_field :first_name, class: "form-control col-sm-8"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
     = f.label :last_name, "Last Name", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
     = f.text_field :last_name, class: "form-control col-sm-8"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :email, "Email", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :email, class: "form-control col-sm-8"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :password, "Temporary Password", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :password, class: "form-control col-sm-8"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :street_address_1, "Address Line 1", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :street_address_1, class: "form-control"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :street_address_2, "Address Line 2", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :street_address_2, class: "form-control"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :city, "City/Town", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :city, class: "form-control"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :state, "State / Province / Region", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :state, class: "form-control"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :zip_code, "Zip / Postal Code", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.text_field :zip_code, class: "form-control"
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
       = f.label :role, "Role", class: "control-label"
-    %div.col-sm-8
+    .col-sm-8
       = f.select :role, [ 'Driver', 'Host', 'Driver & Host'], {}, {prompt: 'Select a Role', class: "form-control"}
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
  		  = f.label :on_call, "On-Call", class: "control-label"
-                %div.col-sm-8
+                .col-sm-8
  		  = radio_button("volunteer", "on_call", true)
  		    = label_tag("Yes")
  		  = radio_button("volunteer", "on_call", false)
  		    = label_tag("No")
-  %div.form-group.row
-    %div.col-sm-4
+  .form-group.row
+    .col-sm-4
  		  = f.label :on_call, "Gender", class: "control-label"
-                %div.col-sm-8
+                .col-sm-8
  		  = radio_button("volunteer", "gender", "F")
  		    = label_tag("Female")
  		  = radio_button("volunteer", "gender", "M")
@@ -69,7 +69,7 @@
       = radio_button("volunteer", "gender", "O")
         = label_tag("Other")
   %p
-    %div.row
-      %div.col-sm-4
+    .row
+      .col-sm-4
         = f.submit 'Submit', :class => "btn btn-primary"
 
