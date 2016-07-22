@@ -1,0 +1,78 @@
+.container
+%h1 Edit Account Details
+= form_for(@volunteer) do |vol_form|
+  = vol_form.fields_for :user do |user_form|
+    .form-group.row
+      .col-sm-4
+        = user_form.label :first_name
+        %br/
+      .col-sm-8
+        = user_form.text_field :first_name, class: "form-control col-sm-8"
+    .form-group.row
+      .col-sm-4
+        = user_form.label :last_name
+        %br/
+      .col-sm-8
+        = user_form.text_field :last_name, class: "form-control col-sm-8"
+    .form-group.row
+      .col-sm-4
+        = user_form.label :email
+        %br/
+      .col-sm-8
+        = user_form.text_field :email, class: "form-control col-sm-8"
+    = user_form.fields_for :address do |addr_form|
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :street_address_1
+          %br/
+        .col-sm-8
+          = addr_form.text_field :street_address_1, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :street_address_2
+          %br/
+        .col-sm-8
+          = addr_form.text_field :street_address_2, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :city
+          %br/
+        .col-sm-8
+          = addr_form.text_field :city, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :state
+          %br/
+        .col-sm-8
+          = addr_form.text_field :state, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :zip_code
+          %br/
+        .col-sm-8
+          = addr_form.text_field :zip_code, class: "form-control col-sm-8"
+  .form-group.row
+    .col-sm-4
+      = vol_form.label :capacity, "Role", class: "control-label"
+    .col-sm-8
+      = vol_form.select :capacity, [ 'Driver', 'Host', 'Driver & Host'], {}, {prompt: 'Select a Role', class: "form-control"}
+  .form-group.row
+    .col-sm-4
+      = vol_form.label :on_call, "On-Call", class: "control-label"
+    .col-sm-8
+      = radio_button("volunteer", "on_call", true)
+        = label_tag("Yes")
+      = radio_button("volunteer", "on_call", false)
+        = label_tag("No")
+ .form-group.row
+    .col-sm-4
+      = vol_form.label :on_call, "Gender", class: "control-label"
+    .col-sm-8
+      = radio_button("volunteer", "gender", "F")
+        = label_tag("Female")
+      = radio_button("volunteer", "gender", "M")
+        = label_tag("Male")
+  .row{:style => "text-align:right; margin:40px"}
+    .col-sm-4
+      = vol_form.submit 'Submit', :class => "btn btn-primary"
+      = link_to 'Back', url_for(:back), class: "btn btn-primary"
