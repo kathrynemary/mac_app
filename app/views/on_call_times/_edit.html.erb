@@ -1,0 +1,37 @@
+<!-- THIS VIEW IS NOT GETTING HIT RIGHT NOW -->
+
+<!-- NOT THE VIEW FOR THE MODAL VIEW -->
+
+<!-- HOW DO WE WANT TO USE THIS VIEW? -->
+
+
+
+
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><%= d.day %></button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add/Delete On Call Times</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for :on_call_time do |f| %>
+          Start Time: <%= date_select :start_time, :start_time, :class => 'datepicker' %>
+          End Time : <%= date_select :end_time, :end_time, :class => 'datepicker' %>
+          Volunteer : <%= f.collection_select :volunteer_id, available_on_call_volunteers,:id,:first_name, include_blank: true %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
