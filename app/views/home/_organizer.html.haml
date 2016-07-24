@@ -2,7 +2,8 @@
   = link_to "Organizer Profile", user_path(current_user)
 .btn.btn-info
   = link_to "Calendar", on_call_times_path
-.btn.btn-info
-  = link_to "Manage Volunteers", volunteers_path
+/ FIXME -- Disabled until we fix issues with volunteer views
+/ .btn.btn-info
+/   = link_to "Manage Volunteers", volunteers_path
 .btn.btn-info
   = link_to "Data Dashboard", rails_admin_path
