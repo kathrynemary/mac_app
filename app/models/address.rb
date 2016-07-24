@@ -1,9 +1,13 @@
 class Address < ActiveRecord::Base
-  has_one :user
-  has_one :clinic
+  belongs_to :user
+  belongs_to :clinic
 
   def full_address
-    "#{street_address_1} #{street_address_2}, #{city}, #{state.try(:upcase)}, #{zip_code}"
+    "#{street_address_1}#{line_two_if_there}, #{city}, #{state.try(:upcase)}, #{zip_code}"
+  end
+
+  def line_two_if_there
+    ", #{street_address_2}" unless street_address_2.blank?
   end
 
 end
