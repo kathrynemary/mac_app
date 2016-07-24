@@ -15,22 +15,30 @@ class UsersController < ApplicationController
                     :last_name,
                     :email,
                     :phone_number))
-    @address = @user.address
-    if @address
-      @address.update_attributes(
-        params.require(:user_attributes)
-              .require(:address_attributes)
-              .permit(:street_address_1,
-                      :street_address_2,
-                      :city,
-                      :state,
-                      :zip_code)
-      )
-    end
+    
+    @address = current_user.address
+    update_or_create_address
+
     redirect_to user_path(current_user)
   end
 
   private
+
+  def address_params
+    params.require(:user).require(:address).permit(:street_address_1, :street_address_2, :city, :state, :zip_code)
+  end
+
+  def address_present?
+    params["user"]["address"].values.any? {|v| !v.blank? }
+  end
+
+  def update_or_create_address
+    if @address && address_present?
+      @address.update_attributes(address_params)
+    elsif address_present?
+      @address = Address.create(address_params)
+    end
+  end
 
   def load_user
     @user = current_user

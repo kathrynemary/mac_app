@@ -1,28 +1,65 @@
 .container
   %h1
     Edit Account Details
-  = form_for(current_user) do |user_form|
+  = form_for(current_user) do |general_form|
     .form-group.row
       .col-sm-4
-        = user_form.label :first_name
+        = general_form.label :first_name
       .col-sm-8
         .col-sm-8
-          = user_form.text_field :first_name
+          = general_form.text_field :first_name, class: "form-control col-sm-8"
     .form-group.row
       .col-sm-4
-        = user_form.label :last_name
+        = general_form.label :last_name
       .col-sm-8
         .col-sm-8
-          = user_form.text_field :last_name
+          = general_form.text_field :last_name, class: "form-control col-sm-8"
     .form-group.row
       .col-sm-4
-        = user_form.label :email
+        = general_form.label :email
       .col-sm-8
         .col-sm-8
-          = user_form.text_field :email
+          = general_form.text_field :email, class: "form-control col-sm-8"
+    .form-group.row
+      .col-sm-4
+        = general_form.label :phone_number
+      .col-sm-8
+        .col-sm-8
+          = general_form.text_field :phone_number, class: "form-control col-sm-8"
+    = general_form.fields_for :address do |addr_form|
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :street_address_1
+          %br/
+        .col-sm-8
+          = addr_form.text_field :street_address_1, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :street_address_2
+          %br/
+        .col-sm-8
+          = addr_form.text_field :street_address_2, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :city
+          %br/
+        .col-sm-8
+          = addr_form.text_field :city, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :state
+          %br/
+        .col-sm-8
+          = addr_form.text_field :state, class: "form-control col-sm-8"
+      .form-group.row
+        .col-sm-4
+          = addr_form.label :zip_code
+          %br/
+        .col-sm-8
+          = addr_form.text_field :zip_code, class: "form-control col-sm-8"
     .row
       .col-sm-4
         .btn
-          = user_form.submit "Update"
+          = general_form.submit "Update"
         .btn
           = link_to "Back", url_for(:back)

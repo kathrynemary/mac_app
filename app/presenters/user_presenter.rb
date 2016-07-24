@@ -1,4 +1,5 @@
 class UserPresenter
+  attr_reader :user
 
   TITLEIZE_FIELDS = %i{
     first_name
@@ -19,8 +20,17 @@ class UserPresenter
     elsif user.volunteer
       VolunteerPresenter.new(user)
     else
-      raise ArgumentError.new("Unexpected user type for #{user}")
+      raise ArgumentError.new("Unexpected user type for #{user}") unless user.is_a? User
+      new(user)
     end
+  end
+
+  def initialize user
+    @user = user
+  end
+
+  def call
+    user_data
   end
 
   def base_data
