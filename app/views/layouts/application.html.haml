@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title MAC
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+
+    %p.notice= notice
+    %p.alert= alert
+
+    %nav.navbar.navbar-default.navbar-fixed-top.login-logout-top
+      .container
+        .col-md-12
+          %a.navbar-brand{:href => "#"}
+            =  image_tag("mac-logo-bw.png", size: "120", alt: "MAC logo", id: "logo-link")
+          - if current_user
+            = link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-inverted navbar-btn pull-right'
+          - else
+            = link_to "Login", new_user_session_path, class: 'btn btn-primary btn-inverted navbar-btn pull-right'
+
+    .page.container
+      #{yield}
