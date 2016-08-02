@@ -49,6 +49,7 @@ group :development, :test do
   # Debugging
   gem 'byebug'
   gem 'pry'
+  gem 'faker'
 
 
   # Rspec
