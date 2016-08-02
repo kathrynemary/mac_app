@@ -29,4 +29,18 @@ FactoryGirl.define do
     user_id 1
   end
 
+  factory :clinic do 
+    title Faker::Name.title  
+    transit_accessible Faker::Lorem.word 
+    abortion_types Faker::Lorem.word
+    site_url Faker::Internet.url 
+    map_url Faker::Internet.url 
+  end
+
+  factory :organizer do 
+    position Faker::Lorem.word
+    board_member false
+    user_id 1
+  end
+
 end
