@@ -23,4 +23,10 @@ FactoryGirl.define do
     day_of_week 1
   end
 
+  factory :volunteer do 
+    gender "female"
+    on_call false
+    user_id 1
+  end
+
 end
