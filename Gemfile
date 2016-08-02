@@ -50,13 +50,14 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
 
+
   # Rspec
   gem 'rspec-core',  '~> 3.4.3'
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers', '~> 3.1'
 
   # Factories
-  # gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do
