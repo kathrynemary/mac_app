@@ -49,8 +49,6 @@ group :development, :test do
   # Debugging
   gem 'byebug'
   gem 'pry'
-  gem 'faker'
-
 
   # Rspec
   gem 'rspec-core',  '~> 3.4.3'
@@ -59,6 +57,7 @@ group :development, :test do
 
   # Factories
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
 
 group :development do

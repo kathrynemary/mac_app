@@ -17,4 +17,10 @@ FactoryGirl.define do
     zip_code Faker::Address.zip
   end
 
+  factory :business_hour do 
+    open_time DateTime.parse("2016-04-01 00:38:41")
+    close_time DateTime.parse("2016-04-01 00:38:41")
+    day_of_week 1
+  end
+
 end
