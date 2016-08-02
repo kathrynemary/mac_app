@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-   factory :accommodation do
+  factory :accommodation do
     bedding "queen sized bed in guest bedroom"
     privacy "locked door"
     guest_capacity 1
@@ -43,4 +43,12 @@ FactoryGirl.define do
     user_id 1
   end
 
+  factory :user do 
+    first_name Faker::Name.first_name
+    last_name Faker::Name.last_name
+    email Faker::Internet.email
+    phone_number Faker::PhoneNumber.phone_number
+    role Faker::Lorem.word
+    password "password"
+  end
 end
