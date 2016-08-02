@@ -51,4 +51,12 @@ FactoryGirl.define do
     role Faker::Lorem.word
     password "password"
   end
+
+  factory :vehicle do 
+    make Faker::Lorem.word
+    model Faker::Lorem.word
+    color Faker::Lorem.word
+    license_plate_number Faker::Lorem.word
+    volunteer_id 1
+  end
 end
