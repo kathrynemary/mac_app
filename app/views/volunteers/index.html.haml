@@ -16,15 +16,15 @@
 %tbody
   - unless @volunteers.empty?
     - @volunteers.each do |volunteer|
-    	%tr
+      %tr
         %td= volunteer.user.try(:first_name)
         %td= volunteer.user.try(:last_name)
         %td= volunteer.capacity
-        %td= volunteer.on_call ? 'Yes' : 'No
+        %td= volunteer.on_call ? 'Yes' : 'No'
         %td
           = link_to(edit_volunteer_path(volunteer), class: "btn btn-small") do
             Edit
           = link_to(volunteer_path(volunteer), class: "btn btn-info") do
             View
-          = link_to(volunteer, class: "btn btn-small btn-danger", method: :delete)  do
+          = link_to(volunteer, class: "btn btn-small btn-danger", method: :delete) do
             Delete
