@@ -3,28 +3,28 @@
   .row{:style => "margin-bottom: 20px; text-align:right"}
   = link_to new_volunteer_path, class: "btn btn-primary" do
     New Volunteer Account
-
+%br/
 .row
-%table.table table-striped table-bordered table-condensed
-%thead
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
   %tr
     %th{:colspan => "1"} First Name
     %th{:colspan => "1"} Last Name
     %th{:colspan => "1"} Capacity
     %th{:colspan => "1"} On Call
     %th Actions
-%tbody
-  - unless @volunteers.empty?
-    - @volunteers.each do |volunteer|
-    	%tr
-        %td= volunteer.user.try(:first_name)
-        %td= volunteer.user.try(:last_name)
-        %td= volunteer.capacity
-        %td= volunteer.on_call ? 'Yes' : 'No
-        %td
-          = link_to(edit_volunteer_path(volunteer), class: "btn btn-small") do
-            Edit
-          = link_to(volunteer_path(volunteer), class: "btn btn-info") do
-            View
-          = link_to(volunteer, class: "btn btn-small btn-danger", method: :delete)  do
-            Delete
+  %tbody
+    - unless @volunteers.empty?
+      - @volunteers.each do |volunteer|
+        %tr
+          %td= volunteer.user.try(:first_name)
+          %td= volunteer.user.try(:last_name)
+          %td= volunteer.capacity
+          %td= volunteer.on_call ? 'Yes' : 'No'
+          %td
+            = link_to(edit_volunteer_path(volunteer), class: "btn btn-small") do
+              Edit
+            = link_to(volunteer_path(volunteer), class: "btn btn-info") do
+              View
+            = link_to(volunteer, class: "btn btn-small btn-danger", method: :delete)  do
+              Delete
