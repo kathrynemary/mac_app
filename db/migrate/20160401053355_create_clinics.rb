@@ -6,7 +6,6 @@ class CreateClinics < ActiveRecord::Migration
       t.string :abortion_types
       t.string :site_url
       t.string :map_url
-      t.integer :address_id
       t.integer :business_hours_id
       
 

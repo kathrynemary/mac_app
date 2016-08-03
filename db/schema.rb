@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20160508022731) do
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
+    t.integer  "user_id"
+    t.integer  "clinic_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -52,7 +54,6 @@ ActiveRecord::Schema.define(version: 20160508022731) do
     t.string   "abortion_types"
     t.string   "site_url"
     t.string   "map_url"
-    t.integer  "address_id"
     t.integer  "business_hours_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -79,7 +80,6 @@ ActiveRecord::Schema.define(version: 20160508022731) do
     t.string   "last_name"
     t.string   "phone_number"
     t.string   "role"
-    t.integer  "address_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

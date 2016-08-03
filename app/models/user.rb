@@ -11,10 +11,8 @@ class User < ActiveRecord::Base
 
   has_one :volunteer
   has_one :organizer
-  belongs_to :address
+  has_many :addresses
   has_many :on_call_times
-
-  accepts_nested_attributes_for :address
 
   def create_volunteer_model
     if volunteer.nil?
@@ -23,11 +21,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  def create_address_model
-    if address.nil?
-      self.address = Address.new(user: self)
-      save!
-    end
+  def address
+    return unless addresses.present?
+    addresses.last
   end
 
   def full_name

@@ -94,6 +94,6 @@ class VolunteersController < ApplicationController
   end
 
   def load_volunteer_data
-    @volunteer_data = VolunteerPresenter.new(@volunteer).present if @volunteer
+    @volunteer_data = UserPresenter.data_for(@volunteer.user).call if @volunteer
   end
 end

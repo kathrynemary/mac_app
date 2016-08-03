@@ -52,24 +52,24 @@
       = f.select :role, [ 'Driver', 'Host', 'Driver & Host'], {}, {prompt: 'Select a Role', class: "form-control"}
   .form-group.row
     .col-sm-4
- 		  = f.label :on_call, "On-Call", class: "control-label"
-                .col-sm-8
- 		  = radio_button("volunteer", "on_call", true)
- 		    = label_tag("Yes")
- 		  = radio_button("volunteer", "on_call", false)
- 		    = label_tag("No")
+      = f.label :on_call, "On-Call", class: "control-label"
+    .col-sm-8
+      = radio_button("volunteer", "on_call", true)
+        = label_tag("Yes")
+      = radio_button("volunteer", "on_call", false)
+        = label_tag("No")
   .form-group.row
     .col-sm-4
- 		  = f.label :on_call, "Gender", class: "control-label"
-                .col-sm-8
- 		  = radio_button("volunteer", "gender", "F")
- 		    = label_tag("Female")
- 		  = radio_button("volunteer", "gender", "M")
-		    = label_tag("Male")
+      = f.label :on_call, "Gender", class: "control-label"
+    .col-sm-8
+      = radio_button("volunteer", "gender", "F")
+        = label_tag("Female")
+      = radio_button("volunteer", "gender", "M")
+      = label_tag("Male")
       = radio_button("volunteer", "gender", "O")
-        = label_tag("Other")
-  %p
-    .row
-      .col-sm-4
+      = label_tag("Other")
+  .row
+    .col-sm-4
+      .btn
         = f.submit 'Submit', :class => "btn btn-primary"
 
