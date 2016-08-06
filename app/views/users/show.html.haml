@@ -27,7 +27,7 @@
       %tr
         %td
           Address
-        %td= current_user.address.full_address
+        %td= @user_data[:full_address]
   .btn
     = link_to "Update Profile", edit_user_path(current_user)
   .btn
