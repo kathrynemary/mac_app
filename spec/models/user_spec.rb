@@ -5,7 +5,8 @@ describe User do
 
   it { should have_one(:volunteer) }
   it { should have_one(:organizer) }
-  it { should belong_to(:address) }
+  it { should have_many(:addresses) }
+  it { should have_many(:on_call_times) }
 
   it "has a valid factory" do
     subject.valid?
