@@ -56,7 +56,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
 
   # Factories
-  # gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
 
 group :development do
