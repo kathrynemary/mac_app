@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Clinic do
   subject { build(:clinic) }
 
-  it { should belong_to(:address) }
+  it { should have_many(:addresses) }
   it { should have_many(:business_hours) }
 
   it "has a valid factory" do

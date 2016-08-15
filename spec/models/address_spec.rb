@@ -4,8 +4,8 @@ describe Address do
 
   subject { build(:address) }
 
-  it { should have_one(:user) }
-  it { should have_one(:clinic) }
+  it { should belong_to(:user) }
+  it { should belong_to(:clinic) }
 
   it "has a valid factory" do
     subject.valid?
