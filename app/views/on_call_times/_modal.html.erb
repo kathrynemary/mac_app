@@ -12,7 +12,7 @@
       </div>
       <div class="modal-body">
         <% monthly_on_call = @call_times.find_all { |c| (@beginning_of_month..@end_of_month).cover? c.start_time }  %>
-        <% monthly_on_call << @call_times.find_all { |c| (@beginning_of_month..@end_of_month).cover? c.start_time }  %>
+        <%# monthly_on_call << @call_times.find_all { |c| (@beginning_of_month..@end_of_month).cover? c.start_time }  %>
         <% if monthly_on_call.present? %>
           <ul>
             <% monthly_on_call.each do |call_time| %>
