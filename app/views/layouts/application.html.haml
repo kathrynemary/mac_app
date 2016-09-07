@@ -6,9 +6,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .flash-alerts
-      %p.notice= notice
-      %p.alert= alert
     %nav.navbar.navbar-default.navbar-fixed-top.login-logout-top
       .container
         .col-md-12
@@ -19,4 +16,10 @@
           - else
             = link_to "Login", new_user_session_path, class: 'btn btn-primary btn-inverted navbar-btn pull-right'
     .page.container
+      - if notice
+        .flash-alerts
+          %p.notice= notice
+      - if alert
+        .flash-alerts
+          %p.alert= alert
       = yield

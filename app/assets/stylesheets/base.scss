@@ -1,9 +1,10 @@
-body { 
-	padding-top: 7em; 
-}
-
 a { 
 	color: $purple;
+}
+
+.page.container {
+	margin-top: $navbar-height;
+	padding-top: $default-padding;
 }
 
 .btn.btn-primary {
@@ -29,8 +30,4 @@ a {
 
 #logo-link {
   margin-top: -50px;
-}
-
-.flash-alerts {
-	margin-top: 100px;
 }
