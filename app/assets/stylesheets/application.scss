@@ -1,9 +1,8 @@
 @import "colors";
 
 $navbar-default-bg: $chartreuse;
-// $light-orange: #ff8c00;
-// $navbar-default-color: $light-orange;
 $navbar-height: 150px;
+$default-padding: 15px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

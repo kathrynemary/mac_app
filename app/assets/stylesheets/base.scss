@@ -1,9 +1,10 @@
-body { 
-	padding-top: 7em; 
-}
-
 a { 
 	color: $purple;
+}
+
+.page.container {
+	margin-top: $navbar-height;
+	padding-top: $default-padding;
 }
 
 .btn.btn-primary {

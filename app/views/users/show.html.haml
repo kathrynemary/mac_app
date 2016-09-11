@@ -5,6 +5,8 @@
     - else
       %h1
         Your Profile
+    .btn
+      = link_to "Update Profile", edit_user_path(current_user)
     %br
     %table.table.table-striped.table-bordered.table-condensed
       %tr
@@ -15,7 +17,7 @@
         %td
           Last Name
         %td= @user_data[:last_name]
-      = render "organizer_details" if current_user.organizer
+      = render template: "users/_organizer_details" if current_user.organizer
       %tr
         %td
           Phone Number
@@ -28,7 +30,3 @@
         %td
           Address
         %td= @user_data[:full_address]
-  .btn
-    = link_to "Update Profile", edit_user_path(current_user)
-  .btn
-    = link_to "Back", home_portal_path
