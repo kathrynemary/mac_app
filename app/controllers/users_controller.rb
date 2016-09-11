@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @address = current_user.address
     update_or_create_address
 
-    redirect_to user_path(current_user)
+    redirect_to home_portal_path
   end
 
   private

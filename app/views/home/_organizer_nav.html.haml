@@ -1,0 +1,5 @@
+= link_to "Profile", user_path(current_user), class: 'btn btn-primary btn-inverted navbar-btn pull-right'
+= link_to "Calendar", on_call_times_path, class: 'btn btn-primary btn-inverted navbar-btn pull-right'
+= link_to "Manage Volunteers", volunteers_path, class: 'btn btn-primary btn-inverted navbar-btn pull-right'
+- if current_user.try(:role) == 'data_admin'
+   = link_to "Data Dashboard", rails_admin_path, class: 'btn btn-primary btn-inverted navbar-btn pull-right'

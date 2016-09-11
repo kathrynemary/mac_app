@@ -1,6 +1,4 @@
 <div>
-  <!-- <h2 class="col-md-8 col-md-offset-5"><%= Date.today.strftime("%B %Y") %></h2> -->
-
   <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
@@ -25,7 +23,7 @@
 
       <% if d.wday == 0 %> </tr><tr> <% end %>
       <td> 
-          <%= render partial: 'modal', :locals => {d: d, call_times: @call_times, beginning_of_month: @beginning_of_month, end_of_month: @end_of_month } %>
+          <%= render template: 'on_call_times/_modal', :locals => {d: d, call_times: @call_times, beginning_of_month: @beginning_of_month, end_of_month: @end_of_month } %>
           <% @date = Date.parse(d.year.to_s+ "-" + d.month.to_s + "-" + d.day.to_s) %>
           <% o = @call_times.find_all { |c| (c.start_time..c.end_time).cover? @date }  %>
           <% o.each do |event| %>
