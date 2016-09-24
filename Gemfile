@@ -45,7 +45,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_12factor', group: :production
 
+gem 'google-api-client'
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
+
 group :development, :test do
+  # Env
+  gem 'dotenv-rails'
+
   # Debugging
   gem 'byebug'
   gem 'pry'
