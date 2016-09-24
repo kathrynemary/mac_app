@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/data_admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   get 'volunteers' => redirect('volunteers/index')
   get 'volunteers/index'

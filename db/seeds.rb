@@ -2,13 +2,14 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 def board_positions
-  [ "Executive Director",
-    "Director of Operations",
-    "Director of Communications",
-    "Director of Finance",
-    "Director of Outreach",
-    "Director of Technology"
-  ]
+  {
+    leah: "Executive Director",
+    abby: "Director of Operations",
+    hannah: "Director of Communications",
+    katie: "Director of Finance",
+    veronica: "Director of Outreach",
+    nicole: "Director of Technology"
+  }
 end
 
 def volunteers
@@ -19,8 +20,8 @@ def volunteers
   ]
 end
 
-board_positions.each_with_index do |position, n|
-  user = User.create(first_name: "Jane#{n}", last_name: "Doe#{n}", phone_number: "1231231234", role: "board_member", email: "test#{n}@example.com", password: "password", password_confirmation: "password")
+board_positions.each do |name, position|
+  user = User.create(role: "board_member", email: "#{name}@midwestaccesscoalition.org", password: "password", password_confirmation: "password")
   Organizer.create(position: position, board_member: true, user_id: user.id)
 end
 
